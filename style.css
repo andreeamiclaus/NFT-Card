@@ -1,3 +1,136 @@
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Primary*/
+    --soft-blue: hsl(215, 51%, 70%);
+--cyan: hsl(178, 100%, 50%);
+
+/*Neutral*/
+
+--main-bg : hsl(217, 54%, 11%);
+--card-bg : hsl(216, 50%, 16%);
+--line : hsl(215, 32%, 27%);
+--white: hsl(0, 0%, 100%);
+}
+
+
+body{
+    font-family: 'Outfit', sans-serif;
+   font-size: 18px;
+   background-color: var(--main-bg);
+color: hsl(0, 0%, 100%, 50%);
+   padding-top: 70px;
+
+ 
+}
+img{
+    max-width: 100%;
+
+}
+ul{
+    list-style-type: none;
+}
+
+ p{
+    font-weight: 300;
+   
+}
+.container{
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.nft-image {
+    position: relative;
+  }
+  
+   .nft-image div { /* to add the cyan color over the div over my image*/
+    position: absolute;
+    top: 0;
+    background-color: hsl(178, 100%, 50%, 60%);
+    width: 100%;
+    height: calc(100% - 5px); /*calculates how much from the total height which is 100% will be hovered, in this case 95% of the height*/
+    z-index: 1; /* defines the order of overlapping html elements, only works on positioned elements.A higher z-index will be on top of elements with lower z-index */
+    opacity: 0; /* set to 0 so that the cyan color is not seen here, only when hover over it*/
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .nft-image div:hover {
+    opacity: 1; /*when hovering the opacity it is seen on the image*/
+    cursor: pointer;
+  }
+  
+ .nft-image div img {
+    position: absolute;
+    left: 50%; /* determines the position of an element left and right affect the horizontal position*/
+    top: 50%;/* top and bottom affect the horizontal position of an element*/
+    transform: translate(-50%, -50%); /* Transform lets you rotate, scale the element(view image in this case in the middle) Translate repositions the element in the horizontal and vertical directions*/
+  }
+.container h2{
+    color: var(--white);
+    margin: 15px 5px 5px 0;
+
+}
+.container h2:hover{
+    color: var(--cyan);
+    cursor: pointer;
+
+}
+.container ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+}
+.container ul li{
+    display: flex;
+    align-items:center ; /* To align the icon with the text*/
+}
+.container ul li img:first-child{ /*Change the color of the icon only by selecting first li element */
+    color: var(--cyan);
+    margin-right: 5px;
+}
+.avatar{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.avatar img{
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 25px;
+}
+.avatar p span{
+    color: var(--white);
+    font-weight: 400;
+    cursor: pointer;
+}
+.avatar p span:hover{
+    color: var(--cyan);
+
+}
+.attribution {
+     font-size: 15px; text-align: center; 
+    }
+.attribution a {
+     color: hsl(228, 45%, 44%);
+     }
+
+     @media(min-width:500px){
+        .container{  /*to align the container in the center of the body*/
+            width: 400px;
+            margin: 0 auto 15px;
+        }
+      }
